@@ -1,0 +1,13 @@
+pi@automate:~ $ wget https://nodejs.org/dist/latest-v10.x/node-v10.24.1-linux-armv6l.tar.xz
+--2021-11-12 15:03:08--  https://nodejs.org/dist/latest-v10.x/node-v10.24.1-linux-armv6l.tar.xz
+Resolving nodejs.org (nodejs.org)... 104.20.23.46, 104.20.22.46, 2606:4700:10::6814:162e, ...
+Connecting to nodejs.org (nodejs.org)|104.20.23.46|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 11557856 (11M) [application/x-xz]
+Saving to: ‘node-v10.24.1-linux-armv6l.tar.xz’
+
+node-v10.24.1-linux-armv6l.ta 100%[=================================================>]  11.02M  2.01MB/s    in 5.7s
+
+2021-11-12 15:03:14 (1.94 MB/s) - ‘node-v10.24.1-linux-armv6l.tar.xz’ saved [11557856/11557856]
+
+pi@automate:~ $ tar -xJf node-v10.24.1-linux-armv6l.tar.xz
