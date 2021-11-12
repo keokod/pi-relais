@@ -1,13 +1,45 @@
-pi@automate:~ $ wget https://nodejs.org/dist/latest-v10.x/node-v10.24.1-linux-armv6l.tar.xz
---2021-11-12 15:03:08--  https://nodejs.org/dist/latest-v10.x/node-v10.24.1-linux-armv6l.tar.xz
-Resolving nodejs.org (nodejs.org)... 104.20.23.46, 104.20.22.46, 2606:4700:10::6814:162e, ...
-Connecting to nodejs.org (nodejs.org)|104.20.23.46|:443... connected.
+sudo su
+root@automate:/# wget https://unofficial-builds.nodejs.org/download/release/v12.18.3/node-v12.18.3-linux-armv6l.tar.gz
+--2021-11-12 15:21:00--  https://unofficial-builds.nodejs.org/download/release/v12.18.3/node-v12.18.3-linux-armv6l.tar.gz
+Resolving unofficial-builds.nodejs.org (unofficial-builds.nodejs.org)... 45.55.98.129
+Connecting to unofficial-builds.nodejs.org (unofficial-builds.nodejs.org)|45.55.98.129|:443... connected.
 HTTP request sent, awaiting response... 200 OK
-Length: 11557856 (11M) [application/x-xz]
-Saving to: ‘node-v10.24.1-linux-armv6l.tar.xz’
+Length: 21402521 (20M) [application/gzip]
+Saving to: ‘node-v12.18.3-linux-armv6l.tar.gz’
 
-node-v10.24.1-linux-armv6l.ta 100%[=================================================>]  11.02M  2.01MB/s    in 5.7s
+node-v12.18.3-linux-armv6l.ta 100%[=================================================>]  20.41M  2.15MB/s    in 11s
 
-2021-11-12 15:03:14 (1.94 MB/s) - ‘node-v10.24.1-linux-armv6l.tar.xz’ saved [11557856/11557856]
+2021-11-12 15:21:11 (1.93 MB/s) - ‘node-v12.18.3-linux-armv6l.tar.gz’ saved [21402521/21402521]
 
-pi@automate:~ $ tar -xJf node-v10.24.1-linux-armv6l.tar.xz
+root@automate:/# tar -xzf node-v12.18.3-linux-armv6l.tar.gz
+root@automate:/# cd node-v12.18.3-linux-armv6l
+root@automate:/node-v12.18.3-linux-armv6l# sudo cp -R * /usr/local
+root@automate:/node-v12.18.3-linux-armv6l# npm -v
+6.14.6
+root@automate:/node-v12.18.3-linux-armv6l# node -v
+v12.18.3
+root@automate:/node-v12.18.3-linux-armv6l# npm install onoff
+
+> epoll@4.0.1 install /node-v12.18.3-linux-armv6l/node_modules/epoll
+> node-gyp rebuild
+
+gyp WARN EACCES current user ("pi") does not have permission to access the dev dir "/root/.cache/node-gyp/12.18.3"
+gyp WARN EACCES attempting to reinstall using temporary dev dir "/node-v12.18.3-linux-armv6l/node_modules/epoll/.node-gyp"
+make: Entering directory '/node-v12.18.3-linux-armv6l/node_modules/epoll/build'
+  CXX(target) Release/obj.target/epoll/src/epoll.o
+  SOLINK_MODULE(target) Release/obj.target/epoll.node
+  COPY Release/epoll.node
+make: Leaving directory '/node-v12.18.3-linux-armv6l/node_modules/epoll/build'
+npm WARN saveError ENOENT: no such file or directory, open '/node-v12.18.3-linux-armv6l/package.json'
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN enoent ENOENT: no such file or directory, open '/node-v12.18.3-linux-armv6l/package.json'
+npm WARN node-v12.18.3-linux-armv6l No description
+npm WARN node-v12.18.3-linux-armv6l No repository field.
+npm WARN node-v12.18.3-linux-armv6l No README data
+npm WARN node-v12.18.3-linux-armv6l No license field.
+
++ onoff@6.0.3
+added 6 packages from 12 contributors and audited 6 packages in 74.559s
+found 0 vulnerabilities
+
+root@automate:/node-v12.18.3-linux-armv6l#
